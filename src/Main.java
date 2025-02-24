@@ -26,9 +26,9 @@ public class Main {
     public static int input(Scanner scanner) {
 
         while (true) {
-            if (scanner.hasNextInt()) {
-                int inputData = scanner.nextInt();
-                return inputData;
+            String inputData = scanner.nextLine();
+            if (inputData.matches("[0-9]")) {
+                return Integer.parseInt(inputData);
             } else {
                 System.out.println("Expected two digits on input. Received letter or negative value. Try again.");
             }
