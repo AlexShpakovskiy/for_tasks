@@ -5,12 +5,22 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
-        String knockKnock = "Тук-Тук", whoIs = "\tКто там";
+        String knockKnock = "Тук-Тук";
+        String whoIs = "\tКто там";
 
-        while (true) {
-            Scanner scanner = new Scanner(System.in);
-            if (scanner.hasNextInt()) {
-                int outerCycle = scanner.nextInt(), innerCycle = scanner.nextInt();
+        int outerCycle = -1;
+        int innerCycle = -1;
+
+        Scanner scanner = new Scanner(System.in);
+        if (scanner.hasNextInt()) {
+            outerCycle = scanner.nextInt();
+        }
+        if (scanner.hasNextInt()) {
+            innerCycle = scanner.nextInt();
+        }
+
+        if (outerCycle >= 0 && innerCycle >= 0) {
+            while (true) {
                 for (int i = 0; i < outerCycle; i++) {
                     System.out.println(knockKnock);
 
@@ -19,12 +29,11 @@ public class Main {
                     }
                 }
                 break;
-
-
-            } else {
-                System.out.println("must be digit");
             }
+        } else {
+            System.out.println("Expected two digits on input. Received letter or negative value. Restart required.");
         }
+
 
     }
 }
