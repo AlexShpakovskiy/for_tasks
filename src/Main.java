@@ -7,36 +7,33 @@ public class Main {
 
         String knockKnock = "Тук-Тук";
         String whoIs = "\tКто там";
-        int[] cycle = new int[2];
-        cycle = input();
 
-        for (int i = 0; i < cycle[0]; i++) {
+        Scanner scanner = new Scanner(System.in);
+        int outerCycle = input(scanner);
+        int innerCycle = input(scanner);
+
+
+        for (int i = 0; i < outerCycle; i++) {
             System.out.println(knockKnock);
 
-            for (int j = 0; j < cycle[1]; j++) {
+            for (int j = 0; j < innerCycle; j++) {
                 System.out.println(whoIs); //update_tst_br1
             }
         }
 
     }
 
-    public static int[] input() {
-        int[] inputData = new int[2];
+    public static int input(Scanner scanner) {
 
-        for (int i = 0; i < 2; i++) {
-
-            while (true) {
-                Scanner scanner = new Scanner(System.in);
-                if (scanner.hasNextInt()) {
-                    inputData[i] = scanner.nextInt();
-                    break;
-                } else {
-                    System.out.println("Expected digit on input. Received letter or negative value. Try again.");
-                }
+        while (true) {
+            if (scanner.hasNextInt()) {
+                int inputData = scanner.nextInt();
+                return inputData;
+            } else {
+                System.out.println("Expected two digits on input. Received letter or negative value. Try again.");
             }
         }
 
-        return inputData;
     }
 
 }
