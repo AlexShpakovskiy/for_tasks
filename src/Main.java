@@ -31,7 +31,7 @@ public class Main {
                     inputData[i] = scanner.nextInt();
                     break;
                 } else {
-                    System.out.println("Expected two digits on input. Received letter or negative value. Try again.");
+                    System.out.println("Expected digit on input. Received letter or negative value. Try again.");
                 }
             }
         }
